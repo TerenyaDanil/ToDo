@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./css/main.css">
+	<title>Document</title>
+</head>
+<body class="bg-gray-200 flex items-center h-screen">
+	<div class="todo relative w-[90%] h-[90%] mx-auto p-10 bg-[#F8F8F8] rounded-md shadow-md">
+		<div class="border-b-2 border-gray-200 pb-4">
+			<p class="date-title text-3xl font-bold mb-2">
+				March 9, 2020
+			</p>
+			<p class="status-title text-[#575767]  text">
+				5 incomplete, 5 completed
+			</p>
+		</div>
+		<div class="text-[#575767] text-lg font-bold mt-4">
+			Incomplete
+		</div>
+		<div class="list-tasks-incompleted max-h-[32%] overflow-y-scroll ease-linear">
+			<div class="task flex items-start mt-4">
+				<div class="checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
+					<svg class="opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="flex flex-col ml-4">
+					<div contenteditable class="task-title text-[#575767] text-lg font-medium">
+						Upload 1099-R to TurboTax
+					</div>
+					<div contenteditable class="task-deskription text-[#B9B9BE] font-semibold mt-1">
+						💰 Finance
+					</div>
+				</div>
+			</div>
+			<div class="task flex items-start mt-4">
+				<div class="checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
+					<svg class="opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="flex flex-col ml-4">
+					<div class="task-title text-[#575767] text-lg font-medium">
+						Upload 1099-R to TurboTax
+					</div>
+					<div class="task-deskription text-[#B9B9BE] font-semibold mt-1">
+						💰 Finance
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="text-[#575767] text-lg font-bold mt-8">
+			Completed
+		</div>
+		<div class="list-tasks-completed max-h-[32%] overflow-y-scroll">
+			<div class="task flex mt-4">
+				<div class="checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md">
+					<svg class="opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+					</svg>
+				</div>
+				<div class="flex flex-col ml-4">
+					<div class="task-title text-[#575767] text-lg font-medium">
+						Upload 1099-R to TurboTax
+					</div>
+					<div class="task-deskription text-[#B9B9BE] font-semibold mt-1">
+						💰 Finance
+					</div>
+				</div>
+			</div>
+		</div>
+		<button style="background: linear-gradient(180deg, #3F4EA0 0%, #473FA0 100%);" class="add-btn absolute right-4 bottom-10 border-2 border-[#515CC6] p-3 rounded-full shadow">
+			<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+				<path d="M11 1V21M1 11H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel"/>
+			</svg>
+		</button>
+	</div>
+	<script src="./js/index.bundle.js"></script>
+</body>
+</html>
