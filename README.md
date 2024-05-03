@@ -1,1 +1,1 @@
-# ToDo
+# Simple To-Do App (Tailwind + Vanilla JS)
