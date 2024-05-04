@@ -141,8 +141,7 @@ gulp.task('startServer:dev', function() {
 
 // Слежка за файлами
 gulp.task('watch:dev', function() {
-	gulp.watch('./src/**/*.html', gulp.parallel('includeFiles:dev'));
-	gulp.watch('./src/**/*.html', gulp.parallel('tailwind:dev'));
+	gulp.watch('./src/**/*.html', gulp.parallel('includeFiles:dev', 'tailwind:dev'));
 	gulp.watch('./src/css/**/*.css', gulp.parallel('tailwind:dev'));
 	gulp.watch('./src/img/*', gulp.parallel('copyImages:dev'));
 	gulp.watch('./src/fonts/*', gulp.parallel('copyFonts:dev'));
