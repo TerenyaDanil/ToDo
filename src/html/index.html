@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="css/main.css">
-	<title>Document</title>
-</head>
+	<title>ToDo Task</title>
+</head> 
 <body class="bg-gray-200 flex items-center h-screen">
 	<div class="todo relative w-[90%] h-[90%] mx-auto p-10 bg-[#F8F8F8] rounded-md shadow-md">
 		<div class="border-b-2 border-gray-200 pb-4">
@@ -19,55 +19,36 @@
 		<div class="text-[#575767] text-lg font-bold mt-4">
 			Incomplete
 		</div>
-		<div class="list-tasks-incompleted max-h-[32%] overflow-y-scroll ease-linear">
-			<div class="task flex items-start mt-4">
-				<div class="checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
-					<svg class="opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<div class="list-tasks-incompleted h-[32%] overflow-y-scroll ease-linear">
+			<div class="task w-1/2 flex items-start mt-4">
+				<div class="task-checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
+					<svg class="opacity-0 pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 				</div>
-				<div class="flex flex-col ml-4">
-					<div contenteditable class="task-title text-[#575767] text-lg font-medium">
-						Upload 1099-R to TurboTax
-					</div>
-					<div contenteditable class="task-deskription text-[#B9B9BE] font-semibold mt-1">
-						💰 Finance
-					</div>
-				</div>
-			</div>
-			<div class="task flex items-start mt-4">
-				<div class="checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
-					<svg class="opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
-				</div>
-				<div class="flex flex-col ml-4">
-					<div class="task-title text-[#575767] text-lg font-medium">
-						Upload 1099-R to TurboTax
-					</div>
-					<div class="task-deskription text-[#B9B9BE] font-semibold mt-1">
-						💰 Finance
-					</div>
+				<div class="task-deskription w-1/2 flex flex-col ml-4">
+					<input value="Upload 1099-R to TurboTax" class="task-title bg-transparent focus-visible:outline-none text-[#575767] text-lg font-medium" placeholder="Task">
+					</input>
+					<input value="💰 Finance" class="task-сategory bg-transparent focus-visible:outline-none text-[#B9B9BE] font-semibold mt-1" placeholder="Category">
+					</input>
 				</div>
 			</div>
 		</div>
 		<div class="text-[#575767] text-lg font-bold mt-8">
 			Completed
 		</div>
-		<div class="list-tasks-completed max-h-[32%] overflow-y-scroll">
-			<div class="task flex mt-4">
-				<div class="checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md">
-					<svg class="opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<div class="list-tasks-completed h-[32%] overflow-y-scroll">
+			<div class="task w-1/2 flex items-start mt-4">
+				<div class="task-checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
+					<svg class="pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
 						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 					</svg>
 				</div>
-				<div class="flex flex-col ml-4">
-					<div class="task-title text-[#575767] text-lg font-medium">
-						Upload 1099-R to TurboTax
-					</div>
-					<div class="task-deskription text-[#B9B9BE] font-semibold mt-1">
-						💰 Finance
-					</div>
+				<div class="task-deskription w-1/2 flex flex-col ml-4 opacity-50">
+					<input value="Upload 1099-R to TurboTax" class="task-title bg-transparent focus-visible:outline-none text-[#575767] text-lg font-medium" placeholder="Task">
+					</input>
+					<input value="💰 Finance" class="task-сategory bg-transparent focus-visible:outline-none text-[#B9B9BE] font-semibold mt-1" placeholder="Category">
+					</input>
 				</div>
 			</div>
 		</div>
