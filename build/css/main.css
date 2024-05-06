@@ -549,17 +549,14 @@ video {
 .h-screen {
   height: 100vh;
 }
+.w-1\/2 {
+  width: 50%;
+}
 .w-6 {
   width: 1.5rem;
 }
 .w-\[90\%\] {
   width: 90%;
-}
-.w-full {
-  width: 100%;
-}
-.w-1\/2 {
-  width: 50%;
 }
 .cursor-pointer {
   cursor: pointer;
@@ -660,14 +657,12 @@ video {
   --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
 .ease-linear {
   transition-timing-function: linear;
 }
-
-body {
-	background: #fff;
-}
-
 .focus-visible\:outline-none:focus-visible {
   outline: 2px solid transparent;
   outline-offset: 2px;
