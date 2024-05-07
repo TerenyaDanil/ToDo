@@ -10,45 +10,44 @@
 	<div class="todo relative w-[90%] h-[90%] mx-auto p-10 bg-[#F8F8F8] rounded-md shadow-md">
 		<div class="border-b-2 border-gray-200 pb-4">
 			<p class="date-title text-3xl font-bold mb-2">
-				March 9, 2020
+				
 			</p>
 			<p class="status-title text-[#575767]  text">
-				5 incomplete, 5 completed
+				0 incomplete, 0 completed
 			</p>
 		</div>
-		<div class="text-[#575767] text-lg font-bold mt-4">
-			Incomplete
-		</div>
-		<div class="list-tasks-incompleted h-[32%] overflow-y-scroll ease-linear">
-			<div class="task w-1/2 flex items-start mt-4">
-				<div class="task-checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
-					<svg class="opacity-0 pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
+		<div class="flex mt-4">
+			<div class="w-1/2">
+				<div class="text-[#575767] text-lg font-bold">
+					Incomplete
 				</div>
-				<div class="task-deskription w-1/2 flex flex-col ml-4">
-					<input value="Upload 1099-R to TurboTax" class="task-title bg-transparent focus-visible:outline-none text-[#575767] text-lg font-medium" placeholder="Task">
-					</input>
-					<input value="💰 Finance" class="task-сategory bg-transparent focus-visible:outline-none text-[#B9B9BE] font-semibold mt-1" placeholder="Category">
-					</input>
+				<div class="list-tasks-incompleted">
+				
 				</div>
 			</div>
-		</div>
-		<div class="text-[#575767] text-lg font-bold mt-8">
-			Completed
-		</div>
-		<div class="list-tasks-completed h-[32%] overflow-y-scroll">
-			<div class="task w-1/2 flex items-start mt-4">
-				<div class="task-checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
-					<svg class="pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-						<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-					</svg>
+			<div class="w-1/2">
+				<div class="flex items-center text-[#575767] text-lg font-bold">
+					Completed
+					<div class="clear-done-tasks cursor-pointer ml-1">
+						<svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 30 30">
+							<path fill="#e55858" d="M15,3C8.373,3,3,8.373,3,15c0,6.627,5.373,12,12,12s12-5.373,12-12C27,8.373,21.627,3,15,3z M16.414,15 c0,0,3.139,3.139,3.293,3.293c0.391,0.391,0.391,1.024,0,1.414c-0.391,0.391-1.024,0.391-1.414,0C18.139,19.554,15,16.414,15,16.414 s-3.139,3.139-3.293,3.293c-0.391,0.391-1.024,0.391-1.414,0c-0.391-0.391-0.391-1.024,0-1.414C10.446,18.139,13.586,15,13.586,15 s-3.139-3.139-3.293-3.293c-0.391-0.391-0.391-1.024,0-1.414c0.391-0.391,1.024-0.391,1.414,0C11.861,10.446,15,13.586,15,13.586 s3.139-3.139,3.293-3.293c0.391-0.391,1.024-0.391,1.414,0c0.391,0.391,0.391,1.024,0,1.414C19.554,11.861,16.414,15,16.414,15z"></path>
+						</svg>
+					</div>
 				</div>
-				<div class="task-deskription w-1/2 flex flex-col ml-4 opacity-50">
-					<input value="Upload 1099-R to TurboTax" class="task-title bg-transparent focus-visible:outline-none text-[#575767] text-lg font-medium" placeholder="Task">
-					</input>
-					<input value="💰 Finance" class="task-сategory bg-transparent focus-visible:outline-none text-[#B9B9BE] font-semibold mt-1" placeholder="Category">
-					</input>
+				<div class="list-tasks-completed">
+					<!-- <div class="task flex items-start mt-4">
+						<div class="task-checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
+							<svg class="pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+						</div>
+						<div class="task-deskription w-full flex flex-col ml-4 opacity-50">
+							<input value="Upload 1099-R to TurboTax" class="task-title bg-transparent focus-visible:outline-none text-[#575767] text-lg font-medium" placeholder="Task">
+							</input>
+							<input value="💰 Finance" class="task-сategory bg-transparent focus-visible:outline-none text-[#B9B9BE] font-semibold mt-1" placeholder="Category">
+							</input>
+						</div>
+					</div> -->
 				</div>
 			</div>
 		</div>
