@@ -3,6 +3,7 @@ const dataTitle = toDo.querySelector('.date-title');
 const statusTitle = toDo.querySelector('.status-title');
 const addTaskBtn = toDo.querySelector('.add-btn');
 const clearDoneTasks = toDo.querySelector('.clear-done-tasks');
+const taskListContainer = toDo.querySelector('.tasks-container');
 const taskListInCompleted = toDo.querySelector('.list-tasks-incompleted');
 const taskListCompleted = toDo.querySelector('.list-tasks-completed');
 
@@ -15,8 +16,7 @@ if (localStorage.getItem('tasks')) {
 	tasks.forEach(item => {
 		renderTask(item);
 		if (item.status === 'done') {
-			const task = taskListInCompleted.querySelector(`[id="${item.id}"]`);
-			doneTask(task);
+			const task = taskListContainer.querySelector(`[id="${item.id}"]`);
 		}
 	});
 }
@@ -52,49 +52,49 @@ function renderTask(task) {
 				</input>
 			</div>
 		</div>`;
-	
-	taskListInCompleted.insertAdjacentHTML('afterbegin', taskHTML);
 
-	const taskText = taskListInCompleted.querySelectorAll(`[id="${task.id}"] input[data-deskription]`);
+	if (task.status === '') {
+		taskListInCompleted.insertAdjacentHTML('afterbegin', taskHTML);
+	} else {
+		taskListCompleted.insertAdjacentHTML('afterbegin', taskHTML);
+	}
+	
+	const taskContainer = taskListContainer.querySelector(`[id="${task.id}"]`);
+	const taskText = taskContainer.querySelectorAll(`input[data-deskription]`);
 
 	taskText.forEach(item => {
 		item.addEventListener('input', changeText)
 	});
+
+	if (task.status === 'done') {
+		addDoneCss(taskContainer);
+	}
+}
+
+function addDoneCss(taskContainer) {
+	const taskDeskription = taskContainer.querySelector('.task-deskription');
+	const taskCheckbox = taskContainer.querySelector('.task-checkbox svg');
+
+	taskCheckbox.classList.toggle('opacity-0');
+	taskDeskription.classList.toggle('opacity-50','pointer-events-none');
 }
 
 function doneTask(task) {
 	const taskContainer = task;
-	console.log(taskContainer)
 	const id = Number(taskContainer.id); 
 	const taskIndex = tasks.findIndex((item) => item.id === Number(id));
-	const taskDeskription = taskContainer.querySelector('.task-deskription');
-	const taskCheckbox = taskContainer.querySelector('.task-checkbox svg');
-
-	taskDeskription.classList.add('opacity-50');
-	taskCheckbox.classList.remove('opacity-0');
-
-	taskListCompleted.insertAdjacentElement('afterbegin', taskContainer);
 	
-	tasks[taskIndex].status = 'done';
+	addDoneCss(taskContainer)
+
+	tasks[taskIndex].status = tasks[taskIndex].status === 'done' ? '' : 'done';
+
+	if (tasks[taskIndex].status === 'done') {
+		taskListCompleted.insertAdjacentElement('afterbegin', taskContainer);
+	} else {
+		taskListInCompleted.insertAdjacentElement('afterbegin', taskContainer);
+	};
 
 	addTaskStatus();
-
-	saveToLocalStorage();
-}
-
-function onDoneTask(task) {
-	const taskContainer = task.closest('.task');
-	const id = Number(taskContainer.id); 
-	const taskIndex = tasks.findIndex((item) => item.id === Number(id));
-	const taskDeskription = taskContainer.querySelector('.task-deskription');
-	const taskCheckbox = taskContainer.querySelector('.task-checkbox svg');
-
-	tasks[taskIndex].status = '';
-
-	taskDeskription.classList.remove('opacity-50');
-	taskCheckbox.classList.add('opacity-0');
-
-	taskListInCompleted.insertAdjacentElement('afterbegin', taskContainer);
 
 	saveToLocalStorage();
 }
@@ -147,17 +147,9 @@ clearDoneTasks.addEventListener('click', ()=> {
 	saveToLocalStorage();
 });
 
-taskListInCompleted.addEventListener('click', (event)=> {
+taskListContainer.addEventListener('click', (event)=> {
 	if (event.target.classList.contains('task-checkbox')) {
 		doneTask(event.target.closest('.task'))
 	}
-});
-
-taskListCompleted.addEventListener('click', (event)=> {
-	if (event.target.classList.contains('task-checkbox')) {
-		onDoneTask(event.target.closest('.task'))
-	}
-
-	addTaskStatus();
 });
 
