@@ -546,11 +546,8 @@ video {
 .h-screen {
   height: 100vh;
 }
-.max-h-\[70\%\] {
-  max-height: 70%;
-}
-.max-h-\[62\%\] {
-  max-height: 62%;
+.h-full {
+  height: 100%;
 }
 .max-h-\[72\%\] {
   max-height: 72%;
