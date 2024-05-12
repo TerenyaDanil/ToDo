@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@media (max-width: 1280px) {
+	html {
+		font-size: calc((16 / 768) * 100vw);
+	}
+}
+
+@media (max-width: 640px) {
+	html {
+		font-size: calc((16 / 390) * 100vw);
+	}
+}
