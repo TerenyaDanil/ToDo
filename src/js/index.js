@@ -56,7 +56,7 @@ function addTaskStatus() {
 }
 
 function renderTask(task) {
-  const taskHTML = `<div id="${task.id}" class="task mt-4 flex items-start">
+  const taskHTML = `<div id="${task.id}" class="task mt-4 first:mt-0 flex items-start">
 						<div
 							class="task-checkbox mt-0.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-md border-2 border-gray-200"
 						>

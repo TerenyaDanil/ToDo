@@ -11,6 +11,24 @@
 
 @media (max-width: 640px) {
 	html {
-		font-size: calc((16 / 390) * 100vw);
+		font-size: calc((16 / 430) * 100vw);
 	}
 }
+
+*::-webkit-scrollbar {
+    background-color:#fff;
+    width: 1rem;
+}
+
+*::-webkit-scrollbar-track {
+    background-color:#fff
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgba(87, 87, 103, 0.5);
+    border-radius: 1rem;
+    border: 0.35rem solid #fff;
+}
+
+*::-webkit-scrollbar-button {display:none}
+
