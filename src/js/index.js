@@ -10,14 +10,19 @@ const taskListCompleted = toDo.querySelector(".list-tasks-completed");
 let taskDeskriptionText = toDo.querySelector(".task-title, .task-сategory");
 
 let tasks = [];
+let tasksDone = [];
 
 if (localStorage.getItem("tasks")) {
   tasks = JSON.parse(localStorage.getItem("tasks"));
   tasks.forEach((item) => {
     renderTask(item);
-    if (item.status === "done") {
-      const task = taskListContainer.querySelector(`[id="${item.id}"]`);
-    }
+  });
+}
+
+if (localStorage.getItem("tasksDone")) {
+  tasksDone = JSON.parse(localStorage.getItem("tasksDone"));
+  tasksDone.forEach((item) => {
+    renderTask(item);
   });
 }
 
@@ -26,31 +31,14 @@ addTaskStatus();
 
 function addDataTitle() {
   const date = new Date();
-  const month = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
+  const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
   dataTitle.textContent = `${month[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`;
 }
 
 function addTaskStatus() {
-  const completeTasks = document.querySelectorAll(
-    ".list-tasks-completed .task",
-  );
-  const incompleteTasks = document.querySelectorAll(
-    ".list-tasks-incompleted .task",
-  );
+  const completeTasks = document.querySelectorAll(".list-tasks-completed .task");
+  const incompleteTasks = document.querySelectorAll(".list-tasks-incompleted .task");
 
   statusTitle.textContent = `${incompleteTasks.length} incomplete, ${completeTasks.length} completed`;
 }
@@ -93,10 +81,10 @@ function renderTask(task) {
 						</div>
 					</div>`;
 
-  if (task.status === "") {
-    taskListInCompleted.insertAdjacentHTML("afterbegin", taskHTML);
-  } else {
+  if (task.status === "Done") {
     taskListCompleted.insertAdjacentHTML("afterbegin", taskHTML);
+  } else {
+    taskListInCompleted.insertAdjacentHTML("afterbegin", taskHTML);
   }
 
   const taskContainer = taskListContainer.querySelector(`[id="${task.id}"]`);
@@ -127,6 +115,7 @@ function doneTask(task) {
   addDoneCss(taskContainer);
 
   tasks[taskIndex].status = tasks[taskIndex].status === "done" ? "" : "done";
+  tasksDone.push(tasks[taskIndex]);
 
   if (tasks[taskIndex].status === "done") {
     taskListCompleted.insertAdjacentElement("afterbegin", taskContainer);
@@ -151,6 +140,7 @@ function changeText() {
 
 function saveToLocalStorage() {
   localStorage.setItem("tasks", JSON.stringify(tasks));
+  localStorage.setItem("tasksDone", JSON.stringify(tasksDone));
 }
 
 addTaskBtn.addEventListener("click", () => {

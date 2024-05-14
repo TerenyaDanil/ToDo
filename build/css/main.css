@@ -677,18 +677,18 @@ video {
 }
 
 *::-webkit-scrollbar {
-    background-color:#fff;
+    background-color:#F8F8F8;
     width: 1rem;
 }
 
 *::-webkit-scrollbar-track {
-    background-color:#fff
+    background-color: #F8F8F8;
 }
 
 *::-webkit-scrollbar-thumb {
-    background-color: rgba(87, 87, 103, 0.5);
+    background-color: rgba(87, 87, 103, 0.3);
     border-radius: 1rem;
-    border: 0.35rem solid #fff;
+    border: 0.35rem solid #F8F8F8;
 }
 
 *::-webkit-scrollbar-button {display:none}
