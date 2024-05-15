@@ -6,58 +6,32 @@
     <link rel="stylesheet" href="css/main.css" />
     <title>ToDo Task</title>
   </head>
-
-  <body class="flex min-h-screen items-center bg-gray-200 px-4 xl:h-screen xl:px-0">
-    <div class="todo relative mx-auto h-full w-full rounded-md bg-[#F8F8F8] p-10 xl:h-[90%] xl:w-[90%] xl:shadow-md">
+  <body class="flex min-h-screen items-stretch bg-gray-200 p-4 sm:p-10">
+    <div class="todo relative mx-auto h-auto w-full rounded-md bg-[#F8F8F8] p-10 sm:shadow-md">
       <div class="border-b-2 border-gray-200 pb-4">
         <p class="date-title mb-2 text-3xl font-bold"></p>
         <p class="status-title text text-[#575767]"></p>
       </div>
-      <div class="tasks-container mt-4 flex flex-col sm:flex-row">
-        <div class="sm:w-1/2">
+      <div class="tasks-container mt-4 flex flex-col xl:flex-row">
+        <div class="xl:w-1/2">
           <div class="mb-4 text-lg font-bold text-[#575767]">
             <div class="select-none">Incomplete</div>
           </div>
-          <div class="list-tasks-incompleted max-h-[15rem] overflow-y-scroll sm:max-h-[25rem]">
-            <!-- <div id="" class="task mt-4 first:mt-0 flex items-start">
-              <div
-                class="task-checkbox mt-0.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-md border-2 border-gray-200"
-              >
-                <svg
-                  class="pointer-events-none opacity-0"
-                  width="10"
-                  height="10"
-                  viewBox="0 0 10 10"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M1 6L3.91667 9L9 1"
-                    stroke="#575767"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
+          <div class="list-tasks-incompleted max-h-none overflow-y-scroll">
+            <!-- <div id="" class="task mt-4 flex items-start first:mt-0">
+              <div class="task-checkbox mt-0.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-md border-2 border-gray-200">
+                <svg class="pointer-events-none opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
                 </svg>
               </div>
               <div class="task-deskription ml-4 flex w-full flex-col">
-                <input
-                  value=""
-                  placeholder="Task"
-                  data-deskription="title"
-                  class="task-title bg-transparent text-lg font-medium text-[#575767] focus-visible:outline-none"
-                />
-                <input
-                  value=""
-                  placeholder="Category"
-                  data-deskription="category"
-                  class="task-сategory mt-1 bg-transparent font-semibold text-[#B9B9BE] focus-visible:outline-none"
-                />
+                <input value="" placeholder="Task" data-deskription="title" class="task-title bg-transparent text-lg font-medium text-[#575767] focus-visible:outline-none" />
+                <input value="" placeholder="Category" data-deskription="category" class="task-сategory mt-1 bg-transparent font-semibold text-[#B9B9BE] focus-visible:outline-none" />
               </div>
             </div> -->
           </div>
         </div>
-        <div class="mt-4 sm:ml-4 sm:mt-0 sm:w-1/2">
+        <div class="mt-8 xl:ml-4 xl:mt-0 xl:w-1/2">
           <div class="mb-4 flex items-center text-lg font-bold text-[#575767]">
             <div class="select-none">Completed</div>
             <div class="clear-done-tasks ml-1 cursor-pointer">
@@ -69,22 +43,22 @@
               </svg>
             </div>
           </div>
-          <div class="list-tasks-completed max-h-[15rem] overflow-y-scroll sm:max-h-[25rem]">
-            <!-- <div class="task flex items-start mt-4">
-						<div class="task-checkbox w-6 h-6 border-2 flex items-center justify-center border-gray-200 rounded-md cursor-pointer mt-0.5">
-							<svg class="pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-							</svg>
-						</div>
-						<div class="task-deskription w-full flex flex-col ml-4 opacity-50">
-							<input value="Upload 1099-R to TurboTax" class="task-title bg-transparent focus-visible:outline-none text-[#575767] text-lg font-medium" placeholder="Task">
-							<input value="💰 Finance" class="task-сategory bg-transparent focus-visible:outline-none text-[#B9B9BE] font-semibold mt-1" placeholder="Category">
-						</div>
-					</div> -->
+          <div class="list-tasks-completed overflow-y-scroll">
+            <!-- <div id="" class="task task-done mt-4 flex items-start first:mt-0">
+              <div class="task-checkbox mt-0.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-md border-2 border-gray-200">
+                <svg class="pointer-events-none" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <div class="task-deskription pointer-events-none ml-4 flex w-full flex-col opacity-50">
+                <input value="" placeholder="Task" data-deskription="title" class="task-title bg-transparent text-lg font-medium text-[#575767] focus-visible:outline-none" />
+                <input value="" placeholder="Category" data-deskription="category" class="task-сategory mt-1 bg-transparent font-semibold text-[#B9B9BE] focus-visible:outline-none" />
+              </div>
+            </div> -->
           </div>
         </div>
       </div>
-      <button style="background: linear-gradient(180deg, #3f4ea0 0%, #473fa0 100%)" class="add-btn absolute bottom-10 right-4 rounded-full border-2 border-[#515CC6] p-3 shadow">
+      <button style="background: linear-gradient(180deg, #3f4ea0 0%, #473fa0 100%)" class="add-btn fixed bottom-10 right-4 rounded-full border-2 border-[#515CC6] p-3 shadow">
         <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M11 1V21M1 11H21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="bevel" />
         </svg>
