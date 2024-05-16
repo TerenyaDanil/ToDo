@@ -45,7 +45,7 @@ function addTaskStatus() {
 
 function renderTask(task) {
   const taskHTML = `
-      <div id="${task.id}" class="task mt-4 flex items-start first:mt-0">
+      <div id="${task.id}" class="task mt-4 flex items-start transition first:mt-0 opacity-0 -translate-x-4">
         <div class="task-checkbox mt-0.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-md border-2 border-gray-200">
           <svg class="pointer-events-none opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -58,7 +58,6 @@ function renderTask(task) {
       </div>
     `;
 
-  console.log(task.status);
   if (task.status === "done") {
     taskListCompleted.insertAdjacentHTML("afterbegin", taskHTML);
   } else {
@@ -75,6 +74,11 @@ function renderTask(task) {
   if (task.status === "done") {
     addDoneCss(taskContainer);
   }
+
+  setTimeout(() => {
+    taskContainer.classList.remove("opacity-0");
+    taskContainer.classList.remove("-translate-x-4");
+  }, 100);
 }
 
 function addDoneCss(taskContainer) {

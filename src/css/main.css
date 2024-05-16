@@ -16,19 +16,67 @@
 
 *::-webkit-scrollbar {
   background-color: #f8f8f8;
-  width: 1rem;
+  width: 0;
 }
 
-*::-webkit-scrollbar-track {
-  background-color: #f8f8f8;
+.task {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 250ms;
 }
 
-*::-webkit-scrollbar-thumb {
-  background-color: rgba(87, 87, 103, 0.3);
-  border-radius: 1rem;
-  border: 0.35rem solid #f8f8f8;
+.task:nth-child(2) {
+  transition-delay: 200ms;
 }
 
-*::-webkit-scrollbar-button {
-  display: none;
+.task:nth-child(3) {
+  transition-delay: 300ms;
+}
+
+.task:nth-child(4) {
+  transition-delay: 400ms;
+}
+
+.task:nth-child(5) {
+  transition-delay: 500ms;
+}
+
+.task:nth-child(6) {
+  transition-delay: 600ms;
+}
+
+.task:nth-child(7) {
+  transition-delay: 700ms;
+}
+
+.task:nth-child(8) {
+  transition-delay: 800ms;
+}
+
+.task:nth-child(9) {
+  transition-delay: 900ms;
+}
+
+.task:nth-child(10) {
+  transition-delay: 1000ms;
+}
+
+.task:nth-child(11) {
+  transition-delay: 1100ms;
+}
+
+.task:nth-child(12) {
+  transition-delay: 1200ms;
+}
+
+.task:nth-child(13) {
+  transition-delay: 1300ms;
+}
+
+.task:nth-child(14) {
+  transition-delay: 1400ms;
+}
+
+.task:nth-child(15) {
+  transition-delay: 1500ms;
 }
