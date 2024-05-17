@@ -1,13 +1,13 @@
+const body = document.querySelector("body");
 const toDo = document.querySelector(".todo");
 const dataTitle = toDo.querySelector(".date-title");
 const statusTitle = toDo.querySelector(".status-title");
 const addTaskBtn = toDo.querySelector(".add-btn");
+const darkThemeBtn = toDo.querySelector(".dark-theme-btn");
 const clearDoneTasks = toDo.querySelector(".clear-done-tasks");
 const taskListContainer = toDo.querySelector(".tasks-container");
 const taskListInCompleted = toDo.querySelector(".list-tasks-incompleted");
 const taskListCompleted = toDo.querySelector(".list-tasks-completed");
-
-let taskDeskriptionText = toDo.querySelector(".task-title, .task-сategory");
 
 let tasks = [];
 let tasksDone = [];
@@ -29,6 +29,11 @@ if (localStorage.getItem("tasksDone")) {
 addDataTitle();
 addTaskStatus();
 
+function addDarkTheme() {
+  console.log(123);
+  body.classList.toggle("dark");
+}
+
 function addDataTitle() {
   const date = new Date();
   const month = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -48,12 +53,12 @@ function renderTask(task) {
       <div id="${task.id}" class="task mt-4 flex items-start transition first:mt-0 opacity-0 -translate-x-4">
         <div class="task-checkbox mt-0.5 flex h-6 w-6 cursor-pointer items-center justify-center rounded-md border-2 border-gray-200">
           <svg class="pointer-events-none opacity-0" width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            <path class="dark:stroke-gray-300" d="M1 6L3.91667 9L9 1" stroke="#575767" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
           </svg>
         </div>
         <div class="task-deskription ml-4 flex w-full flex-col">
-          <input value="${task.title}" placeholder="Task" data-deskription="title" class="task-title bg-transparent text-lg font-medium text-[#575767] focus-visible:outline-none" />
-          <input value="${task.category}" placeholder="Category" data-deskription="category" class="task-сategory mt-1 bg-transparent font-semibold text-[#B9B9BE] focus-visible:outline-none" />
+          <input value="${task.title}" placeholder="Task" data-deskription="title" class="task-title bg-transparent text-lg font-medium text-[#575767] focus-visible:outline-none dark:text-gray-300" />
+          <input value="${task.category}" placeholder="Category" data-deskription="category" class="task-сategory mt-1 bg-transparent font-semibold text-[#B9B9BE] focus-visible:outline-none dark:text-gray-300" />
         </div>
       </div>
     `;
@@ -158,6 +163,8 @@ addTaskBtn.addEventListener("click", () => {
   addTaskStatus();
   saveToLocalStorage();
 });
+
+darkThemeBtn.addEventListener("click", addDarkTheme);
 
 clearDoneTasks.addEventListener("click", () => {
   const doneTasks = taskListCompleted.querySelectorAll(".task");
