@@ -26,11 +26,14 @@ if (localStorage.getItem("tasksDone")) {
   });
 }
 
+if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  addDarkTheme();
+}
+
 addDataTitle();
 addTaskStatus();
 
 function addDarkTheme() {
-  console.log(123);
   body.classList.toggle("dark");
 }
 
