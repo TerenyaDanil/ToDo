@@ -1,3 +1,3 @@
 # Simple To-Do App (Tailwind + Vanilla JS)
 
-https://terenyadanil.github.io/ToDo/build/
+View site https://terenyadanil.github.io/ToDo/build/
