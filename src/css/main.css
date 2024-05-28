@@ -80,3 +80,11 @@
 .task:nth-child(15) {
   transition-delay: 1500ms;
 }
+
+.list-tasks-incompleted .task-checkbox:hover svg {
+  opacity: 1 !important;
+}
+
+.list-tasks-completed .task-checkbox:hover svg {
+  opacity: 0 !important;
+}
