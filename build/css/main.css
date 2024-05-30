@@ -786,10 +786,6 @@ video {
   margin-top: 0px;
 }
 
-.hover\:opacity-75:hover {
-  opacity: 0.75;
-}
-
 .hover\:opacity-85:hover {
   opacity: 0.85;
 }
