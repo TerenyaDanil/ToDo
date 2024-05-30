@@ -11,6 +11,7 @@ const taskListCompleted = toDo.querySelector(".list-tasks-completed");
 
 let tasks = [];
 let tasksDone = [];
+let theme = "light";
 
 if (localStorage.getItem("tasks")) {
   tasks = JSON.parse(localStorage.getItem("tasks"));
@@ -26,8 +27,8 @@ if (localStorage.getItem("tasksDone")) {
   });
 }
 
-if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-  addDarkTheme();
+if (window.matchMedia("(prefers-color-scheme: dark)").matches && JSON.parse(localStorage.getItem("theme")) !== "light") {
+  body.classList.add("dark");
 }
 
 addDataTitle();
@@ -35,6 +36,10 @@ addTaskStatus();
 
 function addDarkTheme() {
   body.classList.toggle("dark");
+
+  theme = JSON.parse(localStorage.getItem("theme")) === "light" ? "dark" : "light";
+
+  localStorage.setItem("theme", JSON.stringify(theme));
 }
 
 function addDataTitle() {
