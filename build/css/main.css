@@ -558,6 +558,9 @@ video {
 .h-auto {
   height: auto;
 }
+.h-\[3rem\] {
+  height: 3rem;
+}
 .max-h-none {
   max-height: none;
 }
@@ -572,6 +575,18 @@ video {
 }
 .w-full {
   width: 100%;
+}
+.w-\[3rem\] {
+  width: 3rem;
+}
+.w-\[1\.375rem\] {
+  width: 1.375rem;
+}
+.w-\[3\.125rem\] {
+  width: 3.125rem;
+}
+.w-\[2\.375rem\] {
+  width: 2.375rem;
 }
 .-translate-x-4 {
   --tw-translate-x: -1rem;
